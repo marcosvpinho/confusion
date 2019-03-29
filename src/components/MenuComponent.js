@@ -10,7 +10,7 @@ import DishDetail from './DishdetailComponent';
                 <CardTitle>{dish.name}</CardTitle>
             </CardImgOverlay>
           </Card>
-
+        
         );
     }
     
