@@ -20,9 +20,9 @@ function Footer(props){
                         <address>
                             410, Rua Valdomiro Cunha<br/> 
                             Forquilhinhas, São José<br/>
-                            <i className="fa fa-phone fa-lg"></i>:+554823343323<br/>
-                            <i className="fa fa-fax fa-lg"></i>:+48999999999<br/>
-                            <i className="fa fa-envelope fa-lg"></i>:<a href="mailto:marcos.v.pinho@gmail.com">marcos.v.pinho@gmail.com</a>
+                            <i className="fa fa-phone fa-lg"></i>+554823343323<br/>
+                            <i className="fa fa-fax fa-lg"></i>+48999999999<br/>
+                            <i className="fa fa-envelope fa-lg"></i><a href="mailto:marcos.v.pinho@gmail.com">marcos.v.pinho@gmail.com</a>
                         </address>
                     </div>
                     <div className="col-12 col-sm-4 align-self-center">
