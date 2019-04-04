@@ -28,29 +28,25 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
 	}
 
 
-	function RenderComments({comments}) {
+	function RenderComments({comments, addComment, dishId}) {
 		if (comments != null) {
-			const list = comments.map((item) => {
-				return (
-					<div key={item.id}>
-						<Media tag="li">
-							<Media body>
-								<p>{item.comment}</p>
-								<p>-- {item.author}, {new Intl.DateTimeFormat('en-US',{ year:'numeric', month:'short', day:'2-digit'}).format(new Date(Date.parse(item.date)))}</p>
-							</Media>
-						</Media>
-					</div>
-				);
-			});
-			return (
-				<div>
+			return(
+				<div className="col-12 col-md-5 m-1">
 					<h4>Comments</h4>
-					<Media list className="list-unstyled">
-						{list}
-					</Media>
+					<ul className="list-unstyled">
+						{comments.map((comment) => {
+							return(
+								<li key={comment.id}>
+								<p>{comment.comment}</p>
+								<p>-- {comment.author}, {new Intl.DateTimeFormat('en-US',{ year:'numeric', month:'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
+								</li>
+							);
+						})}
+					</ul>
+					<CommentForm dishId={dishId} addComment={addComment}/>
 				</div>
 			);
-		} else
+		}else
 			return (
 				<div></div>
 			);
@@ -76,8 +72,10 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
 							<RenderDish dish={props.dish} />	
 						</div>
 						<div className="col-12 col-md-5 m-1">
-							<RenderComments comments= {props.comments}/>
-							<CommentForm></CommentForm>
+							<RenderComments comments= {props.comments}
+							addComment={props.addComment}
+							dishId={props.dish.id}/>
+							
 						</div>
 					</div>
 				</div>
@@ -105,7 +103,8 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
 		  }
 
 		handleComment(values){
-			alert("Current State is: "+JSON.stringify(values));
+			this.toggleModal();
+			this.props.addComment(this.props.dishId,values.rating, values.name, values.message);
 			
 	
 		}
