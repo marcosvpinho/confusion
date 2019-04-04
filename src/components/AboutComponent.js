@@ -8,7 +8,7 @@ function About(props) {
         return (
             <div className="row">
                 <div className="col-2">
-                    <img src={leader.image} alt={leader.name} ></img>
+                    <img src={leader.image} alt={leader.name} width="100%" height="80%"></img>
                 </div>
                 <div className="col-10">
                     <h3>{leader.name}</h3>

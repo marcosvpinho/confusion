@@ -56,7 +56,7 @@ class Contact extends Component{
                     <div className="col-12 col-sm-11 offset-sm-1">
                         <div className="btn-group" role="group">
                             <a role="button" class="btn btn-primary" href="tel:+554832470830"><i class="fa fa-phone"></i> Call</a>
-                            <a role="button" class="btn btn-info"><i class="fa fa-skype"></i>Skype</a>
+                            <a role="button" class="btn btn-info" href="marcos.pinho5"><i class="fa fa-skype"></i>Skype</a>
                             <a role="button" class="btn btn-success" href="mailto:marcos.v.pinho@gmail.com"><i class="fa fa-envelope-o"></i>Email</a> 
                         </div>
                     </div>

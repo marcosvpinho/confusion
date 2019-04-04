@@ -1,16 +1,16 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardHeader,CardBody, Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import { Link } from 'react-router-dom';
 
     function RenderMenuItem({dish, onClick}){
         return(                
             <Card>
+                <CardHeader className="bg-danger text-white">{dish.name}</CardHeader>
+                <CardBody>
                 <Link to={`/menu/${dish.id}`} >
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
-                    <CardImgOverlay>
-                        <CardTitle>{dish.name}</CardTitle>
-                    </CardImgOverlay>
+                    <CardImg width="100%" height="100%" src={dish.image} alt={dish.name} />
                 </Link>
+                </CardBody>
           </Card>
         
         );
